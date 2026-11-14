@@ -1,6 +1,7 @@
 name: Workflow filter fixture
 on:
   push:
+    branches: [main]
   pull_request:
     paths:
       - 'src/**'
