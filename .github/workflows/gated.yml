@@ -1,0 +1,9 @@
+name: Job gate fixture
+on: [push, pull_request]
+jobs:
+  verify:
+    name: Gated required
+    if: github.event_name != 'pull_request' || github.head_ref != 'test/docs-only'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "job ran"
